@@ -1,5 +1,5 @@
 {
-  "name": "wink-calendar",
+  "name": "wink-react-calendar",
   "version": "0.1.0",
   "description": "A responsive calendar for React",
   "main": "./dist/index.js",
