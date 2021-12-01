@@ -20,6 +20,7 @@ export const BaseCalendarMonth = (
     opaqueExtraMonthCells = true,
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
+    showWeekDaysLabels = true,
     onClick
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -132,7 +133,7 @@ export const BaseCalendarMonth = (
     <div className='grid' style={{
       gridTemplateColumns: `repeat(${WEEK_LENGTH}, 1fr)`
     }}>
-      {gridLabels()}
+      {showWeekDaysLabels && gridLabels()}
 
       {grid()}
     </div>

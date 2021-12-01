@@ -11,6 +11,7 @@ export type BaseCalendarMonthProps = {
   opaqueExtraMonthCells?: boolean;
   borderCurrentDay?: boolean;
   navigateToCorrespondingMonth?: boolean;
+  showWeekDaysLabels?: boolean;
   onClick?: (date: DateTime) => void;
 };
 
