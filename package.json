@@ -1,0 +1,26 @@
+{
+  "name": "wink-calendar-project",
+  "version": "0.1.0",
+  "description": "Root project for wink calendar",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WINKgroup/wink-calendar.git"
+  },
+  "author": "Alen Ajam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WINKgroup/wink-calendar/issues"
+  },
+  "homepage": "https://github.com/WINKgroup/wink-calendar#readme",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ]
+}

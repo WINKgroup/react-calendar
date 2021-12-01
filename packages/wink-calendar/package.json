@@ -1,0 +1,45 @@
+{
+  "name": "wink-calendar",
+  "version": "0.1.0",
+  "description": "A responsive calendar for React",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "scss": "sass assets/scss:dist/css",
+    "build": "tsc && npm run scss",
+    "watch:scss": "sass assets/scss:dist/css --watch",
+    "watch:tsc": "tsc --watch",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WINKgroup/wink-calendar.git"
+  },
+  "keywords": [
+    "calendar",
+    "react",
+    "wink",
+    "component",
+    "responsive"
+  ],
+  "author": "Alen Ajam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WINKgroup/wink-calendar/issues"
+  },
+  "homepage": "https://github.com/WINKgroup/wink-calendar#readme",
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "lodash": "^4.17.21",
+    "luxon": "^2.1.1",
+    "moment": "^2.29.1",
+    "react-bootstrap-icons": "^1.6.1",
+    "sass": "^1.44.0",
+    "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.177",
+    "@types/luxon": "^2.0.7",
+    "@types/react": "^17.0.37"
+  }
+}

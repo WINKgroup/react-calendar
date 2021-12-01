@@ -1,0 +1,57 @@
+.calendar-month {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .prev-period, .next-period {
+    cursor: pointer;
+  }
+
+  .grid {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
+    grid-auto-rows: 1fr;
+    flex-grow: 1;
+  }
+
+  .header-cell {
+    text-align: center;
+    display: grid;
+    place-content: center;
+  }
+
+  .cell {
+    //aspect-ratio: 1;
+    border: solid 1px #ced4da;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &.selected {
+      background: rgb(17%, 69%, 97%);
+      color: white;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+
+  .current-day {
+    border: solid 3px rgb(17%, 69%, 97%);
+  }
+}
