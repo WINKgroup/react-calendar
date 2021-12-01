@@ -2,13 +2,8 @@
 
 Yet another calendar React component
 
-<div style="display: flex; gap: 1rem; align-items: center">
-
-[<img src="https://wink.by/images/wink-readme-badge.svg" height="38px" alt="WiNK Developer">](https://wink.by)
-
+[![wink developer](https://badgen.net/badge/WiNK/Developer/ff5a3a)](https://wink.by)
 [![npm](https://img.shields.io/npm/v/wink-calendar)](https://www.npmjs.com/package/wink-calendar)
-</div>
-
 
 ### ⚠️ Work in progress ⚠️
 
