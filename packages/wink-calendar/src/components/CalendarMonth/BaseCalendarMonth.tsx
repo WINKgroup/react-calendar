@@ -37,11 +37,8 @@ export const BaseCalendarMonth = (
   }, [pCurrentMonth]);
 
   useEffect(() => {
-    if (today) {
-      const newValue = today.startOf('month');
-      onMonthChange?.(newValue);
-    }
-  }, [today]);
+    onMonthChange?.(startOfMonth);
+  }, [startOfMonth]);
 
   const WEEK_LENGTH = WEEK_LENGTH_FULL - weekDaysExceptions.length;
 
