@@ -14,6 +14,7 @@ export type BaseCalendarMonthProps = {
   navigateToCorrespondingMonth?: boolean;
   showWeekDaysLabels?: boolean;
   onClick?: (date: DateTime) => void;
+  onMonthChange?: (date: DateTime) => void;
 };
 
 export type BaseCalendarMonthCellConfig = CellConfig & {

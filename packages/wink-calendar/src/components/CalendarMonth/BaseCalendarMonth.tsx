@@ -11,7 +11,7 @@ const WEEK_LENGTH_FULL = 7;
 
 export const BaseCalendarMonth = (
   {
-    currentMonth = DateTime.now(),
+    currentMonth: pCurrentMonth,
     className,
     weekDaysExceptions = [],
     cellsConfig = [],
@@ -22,16 +22,26 @@ export const BaseCalendarMonth = (
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
-    onClick
+    onClick,
+    onMonthChange
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
-  const [startOfMonth, setStartOfMonth] = useState<DateTime>();
+  const [startOfMonth, setStartOfMonth] = useState<DateTime>(
+    pCurrentMonth?.startOf('month') ?? DateTime.now().startOf('month')
+  );
 
   useEffect(() => {
-    if (currentMonth) {
-      setStartOfMonth(currentMonth.startOf('month'));
+    if (pCurrentMonth) {
+      setStartOfMonth(pCurrentMonth.startOf('month'));
     }
-  }, [currentMonth]);
+  }, [pCurrentMonth]);
+
+  useEffect(() => {
+    if (today) {
+      const newValue = today.startOf('month');
+      onMonthChange?.(newValue);
+    }
+  }, [today]);
 
   const WEEK_LENGTH = WEEK_LENGTH_FULL - weekDaysExceptions.length;
 
