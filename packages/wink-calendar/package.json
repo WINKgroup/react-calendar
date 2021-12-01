@@ -5,8 +5,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "scss": "sass assets/scss:dist/css",
-    "build": "tsc && npm run scss",
+    "build:scss": "sass assets/scss:dist/css",
+    "build:tsc": "tsc",
+    "build": "npm run build:tsc && npm run build:scss",
     "watch:scss": "sass assets/scss:dist/css --watch",
     "watch:tsc": "tsc --watch",
     "prepack": "npm run build"
