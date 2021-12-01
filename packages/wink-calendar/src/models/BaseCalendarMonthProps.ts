@@ -8,6 +8,7 @@ export type BaseCalendarMonthProps = {
   minDate?: DateTime;
   maxDate?: DateTime;
   weeks?: number;
+  opaqueExtraMonthCells?: boolean;
   onClick?: (date: DateTime) => void;
 };
 
