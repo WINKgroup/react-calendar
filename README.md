@@ -1,2 +1,1 @@
-# wink-calendar
-A responsive calendar for React
+packages/wink-calendar/README.md
