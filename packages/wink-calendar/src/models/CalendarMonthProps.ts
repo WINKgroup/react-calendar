@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 import { BaseCalendarMonthProps } from './BaseCalendarMonthProps';
 
+/** <CalendarMonth /> props /> */
 export type CalendarMonthProps =
   BaseCalendarMonthProps & (
   | CalendarMonthSingleSelectionProps
@@ -9,7 +10,8 @@ export type CalendarMonthProps =
   );
 
 export type CalendarMonthSingleSelectionProps = {
-  mode: 'singleSelection'
+  mode: 'singleSelection';
+  /** The current selected day which by default is shown with an active style */
   selectedDay?: DateTime;
 };
 

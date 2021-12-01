@@ -12,7 +12,7 @@ function App() {
         <CalendarMonth
           mode='singleSelection'
           selectedDay={date}
-          onClick={setDate}
+          onCellClick={setDate}
         />
       </div>
     </div>

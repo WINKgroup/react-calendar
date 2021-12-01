@@ -22,7 +22,7 @@ export const BaseCalendarMonth = (
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
-    onClick,
+    onCellClick,
     onMonthChange
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -87,7 +87,7 @@ export const BaseCalendarMonth = (
           setStartOfMonth(cloned.startOf('month'));
         }
 
-        onClick?.(cloned);
+        onCellClick?.(cloned);
       };
 
       const currentDateStartDay = currentDate.startOf('day');
