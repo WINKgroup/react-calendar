@@ -18,6 +18,7 @@ export const BaseCalendarMonth = (
     maxDate,
     weeks = 6,
     opaqueExtraMonthCells = true,
+    borderCurrentDay = true,
     onClick
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -85,7 +86,7 @@ export const BaseCalendarMonth = (
       const defaultConfig: CellConfig = {
         style: {
           opaque: opaqueExtraMonthCells && !isSameMonth,
-          bordered: currentDateStartDay.equals(today.startOf('day'))
+          bordered: borderCurrentDay && currentDateStartDay.equals(today.startOf('day'))
         },
         disabled:
           minDate && currentDateStartDay < minDate.startOf('day')

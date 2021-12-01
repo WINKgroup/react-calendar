@@ -9,6 +9,7 @@ export type BaseCalendarMonthProps = {
   maxDate?: DateTime;
   weeks?: number;
   opaqueExtraMonthCells?: boolean;
+  borderCurrentDay?: boolean;
   onClick?: (date: DateTime) => void;
 };
 
