@@ -53,21 +53,9 @@ export const CalendarMonth = (props: CalendarMonthProps) => {
           }]
           : [],
         ...props.startDate && props.endDate
-          ? new Array(
-            props.startDate < props.endDate
-              ? props.endDate.diff(props.startDate, 'day').get('days')
-              : props.startDate.diff(props.endDate, 'day').get('days')
-          )
+          ? new Array(props.endDate.diff(props.startDate, 'day').get('days'))
             .fill(undefined)
-            .map((d, i) => {
-              if (!props.startDate || !props.endDate) {
-                return;
-              }
-
-              return props.startDate < props.endDate
-                ? props.startDate?.plus({ day: i })
-                : props.endDate?.plus({ day: i })
-            })
+            .map((d, i) => props.startDate?.plus({ day: i }))
             .filter(notEmpty)
             .map(date => ({
               date,
@@ -84,7 +72,12 @@ export const CalendarMonth = (props: CalendarMonthProps) => {
         if (!startDate) {
           onSelectStartDate?.(date);
         } else if (!endDate) {
-          onSelectEndDate?.(date);
+          if (date > startDate) {
+            onSelectEndDate?.(date);
+          } else {
+            onSelectEndDate?.(startDate);
+            onSelectStartDate?.(date);
+          }
         } else {
           onSelectStartDate?.(date);
           onSelectEndDate?.(undefined);
