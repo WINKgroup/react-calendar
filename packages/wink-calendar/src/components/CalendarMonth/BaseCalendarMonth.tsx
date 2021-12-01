@@ -16,6 +16,7 @@ export const BaseCalendarMonth = (
     cellsConfig = [],
     minDate,
     maxDate,
+    weeks = 6,
     onClick
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -60,7 +61,7 @@ export const BaseCalendarMonth = (
 
     let currentDate = startOfWeek;
 
-    while (currentDate.diff(startOfWeek, 'week').get('week') < 6) {
+    while (currentDate.diff(startOfWeek, 'week').get('week') < weeks) {
       // Remove sundays
       if (weekDaysExceptions.includes(currentDate.day)) {
         continue;

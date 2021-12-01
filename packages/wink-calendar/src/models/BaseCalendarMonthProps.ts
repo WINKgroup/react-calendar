@@ -7,6 +7,7 @@ export type BaseCalendarMonthProps = {
   cellsConfig?: BaseCalendarMonthCellConfig[];
   minDate?: DateTime;
   maxDate?: DateTime;
+  weeks?: number;
   onClick?: (date: DateTime) => void;
 };
 

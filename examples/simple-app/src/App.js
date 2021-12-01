@@ -2,7 +2,6 @@ import './App.css';
 import { CalendarMonth } from "wink-react-calendar";
 import 'wink-react-calendar/dist/css/style.css';
 import { useState } from "react";
-import { DateTime } from "luxon";
 
 function App() {
   const [date, setDate] = useState();
