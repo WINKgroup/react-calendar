@@ -16,14 +16,18 @@ export type CalendarMonthSingleSelectionProps = {
 };
 
 export type CalendarMonthRangeSelectionProps = {
-  mode: 'rangeSelection',
+  mode: 'rangeSelection';
+  /** Starting date of the range */
   startDate?: DateTime;
+  /** Ending date of the range */
   endDate?: DateTime;
+  /** Triggered when first date is selected */
   onSelectStartDate?: (date?: DateTime) => void;
+  /** Triggered when second date is selected */
   onSelectEndDate?: (date?: DateTime) => void;
 };
 
 export type CalendarMonthCustomProps = {
-  mode: 'custom'
+  mode: 'custom';
   // TODO
 };
