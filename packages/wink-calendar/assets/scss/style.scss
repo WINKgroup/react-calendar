@@ -41,14 +41,26 @@
     align-items: center;
     cursor: pointer;
 
+    &:hover:not(.disabled) {
+      background: darken(white, 3%);
+    }
+
     &.selected {
       background: rgb(17%, 69%, 97%);
       color: white;
+
+      &:hover:not(.disabled) {
+        background: darken(rgb(17%, 69%, 97%), 10%);
+      }
     }
   }
 
   .opaque {
     opacity: 0.5;
+
+    &:hover:not(.disabled) {
+      background: darken(white, 5%);
+    }
   }
 
   .disabled {

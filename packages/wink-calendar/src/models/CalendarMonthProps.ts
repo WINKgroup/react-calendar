@@ -12,12 +12,15 @@ export type CalendarMonthProps =
 export type CalendarMonthSingleSelectionProps = {
   mode: 'singleSelection';
   /** The current selected day which by default is shown with an active style */
-  selectedDay?: DateTime;
+  selectedDate?: DateTime;
 };
 
 export type CalendarMonthRangeSelectionProps = {
-  mode: 'rangeSelection'
-  // TODO
+  mode: 'rangeSelection',
+  startDate?: DateTime;
+  endDate?: DateTime;
+  onSelectStartDate?: (date?: DateTime) => void;
+  onSelectEndDate?: (date?: DateTime) => void;
 };
 
 export type CalendarMonthCustomProps = {
