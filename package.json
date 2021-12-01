@@ -1,7 +1,7 @@
 {
-  "name": "wink-calendar-project",
+  "name": "wink-react-calendar-project",
   "version": "0.1.0",
-  "description": "Root project for wink calendar",
+  "description": "Root project for WiNK React Calendar",
   "main": "index.js",
   "directories": {
     "example": "examples"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WINKgroup/wink-calendar.git"
+    "url": "git+https://github.com/WINKgroup/wink-react-calendar.git"
   },
   "author": "Alen Ajam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WINKgroup/wink-calendar/issues"
+    "url": "https://github.com/WINKgroup/wink-react-calendar/issues"
   },
-  "homepage": "https://github.com/WINKgroup/wink-calendar#readme",
+  "homepage": "https://github.com/WINKgroup/wink-react-calendar#readme",
   "workspaces": [
     "packages/*",
     "examples/*"
