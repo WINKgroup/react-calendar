@@ -47,8 +47,13 @@
     }
   }
 
-  .disabled {
+  .opaque {
     opacity: 0.5;
+  }
+
+  .disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
   }
 
   .current-day {
