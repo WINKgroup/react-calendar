@@ -11,6 +11,7 @@ const WEEK_LENGTH_FULL = 7;
 
 export const BaseCalendarMonth = (
   {
+    currentMonth = DateTime.now(),
     className,
     weekDaysExceptions = [],
     cellsConfig = [],
@@ -27,10 +28,10 @@ export const BaseCalendarMonth = (
   const [startOfMonth, setStartOfMonth] = useState<DateTime>();
 
   useEffect(() => {
-    if (today) {
-      setStartOfMonth(today.startOf('month'));
+    if (currentMonth) {
+      setStartOfMonth(currentMonth.startOf('month'));
     }
-  }, [today]);
+  }, [currentMonth]);
 
   const WEEK_LENGTH = WEEK_LENGTH_FULL - weekDaysExceptions.length;
 

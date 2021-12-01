@@ -2,6 +2,7 @@ import { DateTime } from 'luxon';
 import { CellConfig } from './CellProps';
 
 export type BaseCalendarMonthProps = {
+  currentMonth?: DateTime;
   className?: string;
   weekDaysExceptions?: WeekDay[];
   cellsConfig?: BaseCalendarMonthCellConfig[];
