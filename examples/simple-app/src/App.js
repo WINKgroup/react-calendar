@@ -1,6 +1,6 @@
 import './App.css';
-import Calendar from "wink-calendar";
-import 'wink-calendar/dist/css/style.css';
+import Calendar from "wink-react-calendar";
+import 'wink-react-calendar/dist/css/style.css';
 import { useState } from "react";
 
 function App() {
