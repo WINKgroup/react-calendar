@@ -19,6 +19,7 @@ export const BaseCalendarMonth = (
     weeks = 6,
     opaqueExtraMonthCells = true,
     borderCurrentDay = true,
+    navigateToCorrespondingMonth = true,
     onClick
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -73,7 +74,7 @@ export const BaseCalendarMonth = (
       let cloned = currentDate;
 
       const onItemClick = () => {
-        if (!isSameMonth) {
+        if (navigateToCorrespondingMonth && !isSameMonth) {
           setStartOfMonth(cloned.startOf('month'));
         }
 
