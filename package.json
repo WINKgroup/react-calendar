@@ -1,5 +1,6 @@
 {
   "name": "wink-react-calendar-project",
+  "private": true,
   "version": "0.1.0",
   "description": "Root project for WiNK React Calendar",
   "main": "index.js",
