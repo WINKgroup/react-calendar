@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { capitalize } from 'lodash';
 import { DateTime } from 'luxon';
 import Cell from '../CalendarMonthCell';
 import { BaseCalendarMonthProps } from '../../models/BaseCalendarMonthProps';
@@ -61,7 +60,7 @@ export const BaseCalendarMonth = (
       }
 
       return <div key={date.toISODate()} className='header-cell'>
-        {capitalize(date.toFormat('ccc'))}
+        {date.toFormat('ccc')}
       </div>;
     });
   };

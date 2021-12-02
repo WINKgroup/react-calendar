@@ -1,4 +1,3 @@
-import { capitalize } from 'lodash';
 import { CalendarMonthHeaderProps } from '../models/CalendarMonthHeaderProps';
 import ChevronLeft from '../../assets/images/chevron-left.svg';
 import ChevronRight from '../../assets/images/chevron-right.svg';
@@ -17,7 +16,7 @@ export const CalendarMonthHeader = (
     </div>
 
     <div>
-      {capitalize(currentMonth?.toFormat('MMMM yyyy'))}
+      {currentMonth?.toFormat('MMMM yyyy')}
     </div>
 
     <div
