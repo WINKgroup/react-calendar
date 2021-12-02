@@ -29,6 +29,31 @@ import Calendar from 'wink-react-calendar';
   onClick={setDate}
 />
 ```
+## Props
+
+<b>CalendarMonth</b>
+
+| Name | Type | Default | Description
+| --- | --- | --- | --- |
+| mode | 'singleSelection' \| 'rangeSelection' \| 'custom' | undefined | Define the mode of the calendar
+| currentMonth | Timestamp | Current month | Current month visualized on the calendar |
+| className | string | undefined | Custom class for the outer container |
+| weekDaysExceptions | WeekDay[] | [] | Weekdays to exclude from being rendered |
+| cellsConfig | BaseCalendarMonthCellConfig[] | [] | Custom config for any cell based on date |
+| minDate | Timestamp | undefined | Disable any cell which date is before this param |
+| maxDate | Timestamp | undefined | Disable any cell which date is after this param |
+| weeks | number | 6 | Number of weeks to be rendered at the same time |
+| opaqueExtraMonthCells | boolean | true | Render cells which date doesn't belong to current month with a opaque style |
+| borderCurrentDay | boolean | true | Render current day with a bordered style |
+| navigateToCorrespondingMonth | boolean | true | Navigate to the corresponding month of a cell which date doesn't belong to current month | 
+| showWeekDaysLabels | boolean | true | Show weekdays labels on top |
+| onCellClick | (date: Timestamp) => void | undefined | Triggered when a cell is clicked |
+| onMonthChange | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
+| selectedDate | Timestamp | undefined | (singleSelection mode only) The current selected day which by default is shown with an active style |
+| startDate | Timestamp | undefined | (rangeSelection mode only) Starting date of the range |
+| endDate | Timestamp | undefined | (rangeSelection mode only) Ending date of the range |
+| onSelectStartDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when first date is selected |
+| onSelectEndDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when second date is selected |
 
 ## Typescript support
 
