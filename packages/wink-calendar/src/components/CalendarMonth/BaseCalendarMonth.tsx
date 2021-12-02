@@ -18,6 +18,7 @@ export const BaseCalendarMonth = (
     maxDate,
     weeks = 6,
     opaqueExtraMonthCells = true,
+    showExtraMonthCells = true,
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
@@ -106,11 +107,17 @@ export const BaseCalendarMonth = (
           || !!maxDate && currentDateStartDay > DateTime.fromMillis(maxDate).startOf('day')
       };
 
-      const item = <CellComponent
-        date={currentDate.toMillis()}
-        config={config ?? defaultConfig}
-        onClick={onItemClick}
-      />
+      let item;
+
+      if (!showExtraMonthCells && !isSameMonth) {
+        item = <div></div>;
+      } else {
+        item = <CellComponent
+          date={currentDate.toMillis()}
+          config={config ?? defaultConfig}
+          onClick={onItemClick}
+        />;
+      }
 
       arr.push(item);
 

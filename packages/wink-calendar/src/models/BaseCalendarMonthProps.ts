@@ -19,6 +19,8 @@ export type BaseCalendarMonthProps = {
   weeks?: number;
   /** Render cells which date doesn't belong to current month with a opaque style */
   opaqueExtraMonthCells?: boolean;
+  /** Render or not cells which date doesn't belong to current month */
+  showExtraMonthCells?: boolean;
   /** Render current day with a bordered style */
   borderCurrentDay?: boolean;
   /** Navigate to the corresponding month of a cell which date doesn't belong to current month */
