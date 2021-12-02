@@ -1,13 +1,14 @@
 import classNames from 'classnames';
-import { CellProps } from '../models/CellProps';
+import { CalendarMonthCellProps } from '../models/CalendarMonthCellProps';
 import { DateTime } from 'luxon';
 
 const CalendarMonthCell = (
   {
     date,
     config,
+    events = [],
     onClick: pOnClick
-  }: CellProps) => {
+  }: CalendarMonthCellProps) => {
   const onClick = () => {
     if (!config?.disabled) {
       pOnClick?.();
@@ -33,6 +34,8 @@ const CalendarMonthCell = (
     onClick={onClick}
   >
     {DateTime.fromMillis(date).day}
+
+    <div className={classNames('event-dot', { show: !!events.length })} />
   </div>;
 };
 

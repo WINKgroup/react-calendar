@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import CalendarMonthCell from '../CalendarMonthCell';
 import { BaseCalendarMonthProps } from '../../models/BaseCalendarMonthProps';
-import { CellConfig } from '../../models/CellProps';
+import { CalendarMonthCellConfig } from '../../models/CalendarMonthCellProps';
 import { CalendarMonthHeader } from '../CalendarMonthHeader';
 
 const WEEK_LENGTH_FULL = 7;
@@ -23,6 +23,7 @@ export const BaseCalendarMonth = (
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
     cellComponent: CellComponent = CalendarMonthCell,
+    events = [],
     onCellClick,
     onMonthChange
   }: BaseCalendarMonthProps) => {
@@ -97,7 +98,7 @@ export const BaseCalendarMonth = (
       const currentDateStartDay = currentDate.startOf('day');
       const config = cellsConfig.find(c => DateTime.fromMillis(c.date).startOf('day').equals(currentDateStartDay));
 
-      const defaultConfig: CellConfig = {
+      const defaultConfig: CalendarMonthCellConfig = {
         style: {
           opaque: opaqueExtraMonthCells && !isSameMonth,
           bordered: borderCurrentDay && currentDateStartDay.equals(today.startOf('day'))
@@ -107,14 +108,17 @@ export const BaseCalendarMonth = (
           || !!maxDate && currentDateStartDay > DateTime.fromMillis(maxDate).startOf('day')
       };
 
+      const dayEvents = events.filter(({ date }) => DateTime.fromMillis(date).startOf('day').equals(currentDate));
+
       let item;
 
       if (!showExtraMonthCells && !isSameMonth) {
-        item = <div></div>;
+        item = <div />;
       } else {
         item = <CellComponent
           date={currentDate.toMillis()}
           config={config ?? defaultConfig}
+          events={dayEvents}
           onClick={onItemClick}
         />;
       }

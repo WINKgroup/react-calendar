@@ -37,6 +37,7 @@
     text-align: center;
     font-weight: bold;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -70,5 +71,16 @@
 
   .current-day {
     border: solid 3px rgb(17%, 69%, 97%);
+  }
+
+  .event-dot {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    margin-top: 0.5rem;
+
+    &.show {
+      background: lightgrey;
+    }
   }
 }

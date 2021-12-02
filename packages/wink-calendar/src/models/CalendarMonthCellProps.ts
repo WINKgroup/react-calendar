@@ -1,12 +1,14 @@
 import { Timestamp } from './Date';
+import { CalendarEvent } from './CalendarEvent';
 
-export type CellProps = {
+export type CalendarMonthCellProps = {
   date: Timestamp;
-  config?: CellConfig;
+  config?: CalendarMonthCellConfig;
+  events?: CalendarEvent[];
   onClick?: () => void;
 };
 
-export type CellConfig = {
+export type CalendarMonthCellConfig = {
   disabled?: boolean;
   style?: {
     active?: boolean;

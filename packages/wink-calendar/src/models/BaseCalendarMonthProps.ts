@@ -1,5 +1,6 @@
-import { CellConfig, CellProps } from './CellProps';
+import { CalendarMonthCellConfig, CalendarMonthCellProps } from './CalendarMonthCellProps';
 import { Timestamp } from './Date';
+import { CalendarEvent } from './CalendarEvent';
 
 /** <BaseCalendarMonth /> props /> */
 export type BaseCalendarMonthProps = {
@@ -32,10 +33,11 @@ export type BaseCalendarMonthProps = {
   /** Triggered when the current month is changed */
   onMonthChange?: (date: Timestamp) => void;
   /** Custom day cell component */
-  cellComponent?: (props: CellProps) => JSX.Element;
+  cellComponent?: (props: CalendarMonthCellProps) => JSX.Element;
+  events?: CalendarEvent[];
 };
 
-export type BaseCalendarMonthCellConfig = CellConfig & {
+export type BaseCalendarMonthCellConfig = CalendarMonthCellConfig & {
   date: Timestamp;
 };
 
