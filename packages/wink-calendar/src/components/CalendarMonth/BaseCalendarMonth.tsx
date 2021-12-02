@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
 import { capitalize } from 'lodash';
 import { DateTime } from 'luxon';
-import Cell from '../Cell';
+import Cell from '../CalendarMonthCell';
 import { BaseCalendarMonthProps } from '../../models/BaseCalendarMonthProps';
 import { CellConfig } from '../../models/CellProps';
+import { CalendarMonthHeader } from '../CalendarMonthHeader';
 
 const WEEK_LENGTH_FULL = 7;
 
@@ -121,25 +121,10 @@ export const BaseCalendarMonth = (
   };
 
   return <div className={classNames('calendar-month', className)}>
-    <p className='calendar-header'>
-      <div
-        className='prev-period'
-        onClick={() => setStartOfMonth(month => month?.minus({ month: 1 }))}
-      >
-        <ChevronLeft size={20} />
-      </div>
-
-      <div>
-        {capitalize(startOfMonth?.toFormat('MMMM yyyy'))}
-      </div>
-
-      <div
-        className='next-period'
-        onClick={() => setStartOfMonth(month => month?.plus({ month: 1 }))}
-      >
-        <ChevronRight size={20} />
-      </div>
-    </p>
+    <CalendarMonthHeader
+      currentMonth={startOfMonth}
+      onChangeMonth={setStartOfMonth}
+    />
 
     <div className='grid' style={{
       gridTemplateColumns: `repeat(${WEEK_LENGTH}, 1fr)`
