@@ -27,17 +27,20 @@ export const BaseCalendarMonth = (
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
   const [startOfMonth, setStartOfMonth] = useState<DateTime>(
-    pCurrentMonth?.startOf('month') ?? DateTime.now().startOf('month')
+    (pCurrentMonth
+      ? DateTime.fromMillis(pCurrentMonth).startOf('month')
+      : undefined)
+    ?? DateTime.now().startOf('month')
   );
 
   useEffect(() => {
     if (pCurrentMonth) {
-      setStartOfMonth(pCurrentMonth.startOf('month'));
+      setStartOfMonth(DateTime.fromMillis(pCurrentMonth).startOf('month'));
     }
   }, [pCurrentMonth]);
 
   useEffect(() => {
-    onMonthChange?.(startOfMonth);
+    onMonthChange?.(startOfMonth.toMillis());
   }, [startOfMonth]);
 
   const WEEK_LENGTH = WEEK_LENGTH_FULL - weekDaysExceptions.length;
@@ -87,11 +90,11 @@ export const BaseCalendarMonth = (
           setStartOfMonth(cloned.startOf('month'));
         }
 
-        onCellClick?.(cloned);
+        onCellClick?.(cloned.toMillis());
       };
 
       const currentDateStartDay = currentDate.startOf('day');
-      const config = cellsConfig.find(c => c.date.startOf('day').equals(currentDateStartDay));
+      const config = cellsConfig.find(c => DateTime.fromMillis(c.date).startOf('day').equals(currentDateStartDay));
 
       const defaultConfig: CellConfig = {
         style: {
@@ -99,8 +102,8 @@ export const BaseCalendarMonth = (
           bordered: borderCurrentDay && currentDateStartDay.equals(today.startOf('day'))
         },
         disabled:
-          minDate && currentDateStartDay < minDate.startOf('day')
-          || maxDate && currentDateStartDay > maxDate.startOf('day')
+          !!minDate && currentDateStartDay < DateTime.fromMillis(minDate).startOf('day')
+          || !!maxDate && currentDateStartDay > DateTime.fromMillis(maxDate).startOf('day')
       };
 
       const item = <Cell

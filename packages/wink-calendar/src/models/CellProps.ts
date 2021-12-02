@@ -1,3 +1,4 @@
+import { Timestamp } from './Date';
 import { DateTime } from 'luxon';
 
 export type CellProps = {

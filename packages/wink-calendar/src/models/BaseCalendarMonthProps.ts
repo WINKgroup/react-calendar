@@ -1,10 +1,10 @@
-import { DateTime } from 'luxon';
 import { CellConfig } from './CellProps';
+import { Timestamp } from './Date';
 
 /** <BaseCalendarMonth /> props /> */
 export type BaseCalendarMonthProps = {
   /** Current month visualized on the calendar */
-  currentMonth?: DateTime;
+  currentMonth?: Timestamp;
   /** Custom class for the outer container */
   className?: string;
   /** Weekdays to exclude from being rendered */
@@ -12,9 +12,9 @@ export type BaseCalendarMonthProps = {
   /** Custom config for any cell based on date */
   cellsConfig?: BaseCalendarMonthCellConfig[];
   /** Disable any cell which date is before this param */
-  minDate?: DateTime;
+  minDate?: Timestamp;
   /** Disable any cell which date is after this param */
-  maxDate?: DateTime;
+  maxDate?: Timestamp;
   /** Number of weeks to be rendered at the same time */
   weeks?: number;
   /** Render cells which date doesn't belong to current month with a opaque style */
@@ -26,13 +26,13 @@ export type BaseCalendarMonthProps = {
   /** Show weekdays labels on top */
   showWeekDaysLabels?: boolean;
   /** Triggered when a cell is clicked */
-  onCellClick?: (date: DateTime) => void;
+  onCellClick?: (date: Timestamp) => void;
   /** Triggered when the current month is changed */
-  onMonthChange?: (date: DateTime) => void;
+  onMonthChange?: (date: Timestamp) => void;
 };
 
 export type BaseCalendarMonthCellConfig = CellConfig & {
-  date: DateTime;
+  date: Timestamp;
 };
 
 export enum WeekDay {

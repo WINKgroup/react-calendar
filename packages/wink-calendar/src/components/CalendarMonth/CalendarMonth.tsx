@@ -2,6 +2,7 @@ import { CalendarMonthProps } from '../../models/CalendarMonthProps';
 import { BaseCalendarMonth } from './BaseCalendarMonth';
 import { BaseCalendarMonthCellConfig } from '../../models/BaseCalendarMonthProps';
 import { DateTime } from 'luxon';
+import { Timestamp } from '../../models/Date';
 
 export const CalendarMonth = (props: CalendarMonthProps) => {
   switch (props.mode) {
@@ -53,12 +54,14 @@ export const CalendarMonth = (props: CalendarMonthProps) => {
           }]
           : [],
         ...props.startDate && props.endDate
-          ? new Array(props.endDate.diff(props.startDate, 'day').get('days'))
+          ? new Array(DateTime.fromMillis(props.endDate).diff(DateTime.fromMillis(props.startDate), 'day').get('days'))
             .fill(undefined)
-            .map((d, i) => props.startDate?.plus({ day: i }))
+            .map((d, i) => props.startDate
+              ? DateTime.fromMillis(props.startDate).plus({ day: i })
+              : undefined)
             .filter(notEmpty)
             .map(date => ({
-              date,
+              date: date.toMillis(),
               style: {
                 active: true,
                 opaque: true
@@ -68,7 +71,8 @@ export const CalendarMonth = (props: CalendarMonthProps) => {
         ...cellsConfig ?? []
       ];
 
-      const onCellClick = (date: DateTime) => {
+      const onCellClick = (date: Timestamp) => {
+
         if (!startDate) {
           onSelectStartDate?.(date);
         } else if (!endDate) {

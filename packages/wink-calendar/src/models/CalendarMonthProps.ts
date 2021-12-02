@@ -1,5 +1,5 @@
-import { DateTime } from 'luxon';
 import { BaseCalendarMonthProps } from './BaseCalendarMonthProps';
+import { Timestamp } from './Date';
 
 /** <CalendarMonth /> props /> */
 export type CalendarMonthProps =
@@ -12,19 +12,19 @@ export type CalendarMonthProps =
 export type CalendarMonthSingleSelectionProps = {
   mode: 'singleSelection';
   /** The current selected day which by default is shown with an active style */
-  selectedDate?: DateTime;
+  selectedDate?: Timestamp;
 };
 
 export type CalendarMonthRangeSelectionProps = {
   mode: 'rangeSelection';
   /** Starting date of the range */
-  startDate?: DateTime;
+  startDate?: Timestamp;
   /** Ending date of the range */
-  endDate?: DateTime;
+  endDate?: Timestamp;
   /** Triggered when first date is selected */
-  onSelectStartDate?: (date?: DateTime) => void;
+  onSelectStartDate?: (date?: Timestamp) => void;
   /** Triggered when second date is selected */
-  onSelectEndDate?: (date?: DateTime) => void;
+  onSelectEndDate?: (date?: Timestamp) => void;
 };
 
 export type CalendarMonthCustomProps = {
