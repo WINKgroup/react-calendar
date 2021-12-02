@@ -1,4 +1,4 @@
-import { CellConfig } from './CellProps';
+import { CellConfig, CellProps } from './CellProps';
 import { Timestamp } from './Date';
 
 /** <BaseCalendarMonth /> props /> */
@@ -29,6 +29,8 @@ export type BaseCalendarMonthProps = {
   onCellClick?: (date: Timestamp) => void;
   /** Triggered when the current month is changed */
   onMonthChange?: (date: Timestamp) => void;
+  /** Custom day cell component */
+  cellComponent?: (props: CellProps) => JSX.Element;
 };
 
 export type BaseCalendarMonthCellConfig = CellConfig & {

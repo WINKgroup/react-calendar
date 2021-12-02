@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import Cell from '../CalendarMonthCell';
+import CalendarMonthCell from '../CalendarMonthCell';
 import { BaseCalendarMonthProps } from '../../models/BaseCalendarMonthProps';
 import { CellConfig } from '../../models/CellProps';
 import { CalendarMonthHeader } from '../CalendarMonthHeader';
@@ -21,6 +21,7 @@ export const BaseCalendarMonth = (
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
+    cellComponent: CellComponent = CalendarMonthCell,
     onCellClick,
     onMonthChange
   }: BaseCalendarMonthProps) => {
@@ -105,8 +106,8 @@ export const BaseCalendarMonth = (
           || !!maxDate && currentDateStartDay > DateTime.fromMillis(maxDate).startOf('day')
       };
 
-      const item = <Cell
-        date={currentDate}
+      const item = <CellComponent
+        date={currentDate.toMillis()}
         config={config ?? defaultConfig}
         onClick={onItemClick}
       />
