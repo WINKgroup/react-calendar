@@ -92,8 +92,6 @@ export const CalendarMonth = (props: CalendarMonthProps) => {
         if (!startDate) {
           onSelectStartDate?.(date);
         } else if (!endDate) {
-          console.log(date);
-          console.log(startDate);
           if (date >= startDate) {
             onSelectEndDate?.(date);
           } else {
