@@ -7,7 +7,9 @@ const CalendarMonthCell = (
     date,
     config,
     events = [],
-    onClick: pOnClick
+    onClick: pOnClick,
+    onMouseEnter: pOnMouseEnter,
+    onMouseLeave: pOnMouseLeave
   }: CalendarMonthCellProps) => {
   const onClick = () => {
     if (!config?.disabled) {
@@ -32,6 +34,8 @@ const CalendarMonthCell = (
         : {}
     })}
     onClick={onClick}
+    onMouseEnter={pOnMouseEnter}
+    onMouseLeave={pOnMouseLeave}
   >
     {DateTime.fromMillis(date).day}
 

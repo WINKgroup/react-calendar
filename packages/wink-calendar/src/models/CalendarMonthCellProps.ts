@@ -11,6 +11,10 @@ export type CalendarMonthCellProps = {
   events?: CalendarEvent[];
   /** Triggered when cell gets clicked */
   onClick?: () => void;
+  /** Triggered when cell gets hovered */
+  onMouseEnter?: () => void;
+  /** Triggered when cell is no longer hovered */
+  onMouseLeave?: () => void;
 };
 
 export type CalendarMonthCellConfig = {

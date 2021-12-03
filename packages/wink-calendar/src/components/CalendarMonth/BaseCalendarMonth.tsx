@@ -25,6 +25,8 @@ export const BaseCalendarMonth = (
     cellComponent: CellComponent = CalendarMonthCell,
     events = [],
     onCellClick,
+    onCellMouseEnter,
+    onCellMouseLeave,
     onMonthChange
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -120,6 +122,8 @@ export const BaseCalendarMonth = (
           config={config ?? defaultConfig}
           events={dayEvents}
           onClick={onItemClick}
+          onMouseEnter={() => onCellMouseEnter?.(cloned.toMillis())}
+          onMouseLeave={() => onCellMouseLeave?.(cloned.toMillis())}
         />;
       }
 

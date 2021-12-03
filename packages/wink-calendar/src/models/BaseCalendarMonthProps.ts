@@ -30,6 +30,10 @@ export type BaseCalendarMonthProps = {
   showWeekDaysLabels?: boolean;
   /** Triggered when a cell is clicked */
   onCellClick?: (date: Timestamp) => void;
+  /** Triggered when a cell is hovered */
+  onCellMouseEnter?: (date: Timestamp) => void;
+  /** Triggered when a cell is no longer hovered */
+  onCellMouseLeave?: (date: Timestamp) => void;
   /** Triggered when the current month is changed */
   onMonthChange?: (date: Timestamp) => void;
   /** Custom day cell component */
