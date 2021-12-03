@@ -24,6 +24,8 @@ export const BaseCalendarMonth = (
     showWeekDaysLabels = true,
     cellComponent: CellComponent = CalendarMonthCell,
     events = [],
+    height = '100%',
+    width = '100%',
     onCellClick,
     onCellMouseEnter,
     onCellMouseLeave,
@@ -135,7 +137,13 @@ export const BaseCalendarMonth = (
     return arr;
   };
 
-  return <div className={classNames('calendar-month', className)}>
+  return <div
+    className={classNames('calendar-month', className)}
+    style={{
+      height,
+      width
+    }}
+  >
     <CalendarMonthHeader
       currentMonth={startOfMonth}
       onChangeMonth={setStartOfMonth}

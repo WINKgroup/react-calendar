@@ -7,7 +7,10 @@ export type CalendarMonthCellProps = {
   date: Timestamp;
   /** Configuration object */
   config?: CalendarMonthCellConfig;
-  /** Events to be shown inside of this cell */
+  /**
+   * Events to be shown inside of this cell
+   * @default []
+   * */
   events?: CalendarEvent[];
   /** Triggered when cell gets clicked */
   onClick?: () => void;
@@ -18,7 +21,10 @@ export type CalendarMonthCellProps = {
 };
 
 export type CalendarMonthCellConfig = {
-  /** Disables click behaviour on the cell */
+  /**
+   * Disables click behaviour on the cell
+   * @default false
+   * */
   disabled?: boolean;
   /** Flags to customize style of the cell */
   style?: {

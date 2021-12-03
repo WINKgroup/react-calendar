@@ -10,12 +10,14 @@ export type CalendarMonthProps =
   );
 
 export type CalendarMonthSingleSelectionProps = {
+  /** Define the mode of the calendar */
   mode: 'singleSelection';
   /** The current selected day which by default is shown with an active style */
   selectedDate?: Timestamp;
 };
 
 export type CalendarMonthRangeSelectionProps = {
+  /** Define the mode of the calendar */
   mode: 'rangeSelection';
   /** Starting date of the range */
   startDate?: Timestamp;
@@ -28,6 +30,7 @@ export type CalendarMonthRangeSelectionProps = {
 };
 
 export type CalendarMonthCustomProps = {
+  /** Define the mode of the calendar */
   mode: 'custom';
   // TODO
 };
