@@ -68,20 +68,20 @@ const [date, setDate] = useState();
 | borderCurrentDay | boolean | true | Render current day with a bordered style |
 | navigateToCorrespondingMonth | boolean | true | Navigate to the corresponding month of a cell which date doesn't belong to current month | 
 | showWeekDaysLabels | boolean | true | Show weekdays labels on top |
-| onCellClick | (date: Timestamp) => void | undefined | Triggered when a cell is clicked |
-| onMonthChange | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
+| height | string \| number | '100%' | Height of the calendar |
+| width | string \| number | '100%' | Width of the calendar |
+| showExtraMonthCells | boolean | true | Render or not cells which date doesn't belong to current month |
+| events | CalendarEvent[] | [] | Events to be shown inside of the calendar cells |
 | selectedDate | Timestamp | undefined | (singleSelection mode only) The current selected day which by default is shown with an active style |
 | startDate | Timestamp | undefined | (rangeSelection mode only) Starting date of the range |
 | endDate | Timestamp | undefined | (rangeSelection mode only) Ending date of the range |
+| cellComponent | (props: CalendarMonthCellProps) => JSX.Element | CalendarMonthCell | Component for the cell of a day |
+| onCellClick | (date: Timestamp) => void | undefined | Triggered when a cell is clicked |
+| onMonthChange | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
 | onSelectStartDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when first date is selected |
 | onSelectEndDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when second date is selected |
-| cellComponent | (props: CalendarMonthCellProps) => JSX.Element | CalendarMonthCell | Component for the cell of a day |
-| showExtraMonthCells | boolean | true | Render or not cells which date doesn't belong to current month |
-| events | CalendarEvent[] | [] | Events to be shown inside of the calendar cells |
 | onCellMouseEnter | (date: Timestamp) => void | undefined | Triggered when a cell is no longer hovered |
 | onCellMouseLeave | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
-| height | string \| number | '100%' | Height of the calendar |
-| width | string \| number | '100%' | Width of the calendar |
 
 ## Typescript support
 
