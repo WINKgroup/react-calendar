@@ -34,6 +34,7 @@ export type BaseCalendarMonthProps = {
   onMonthChange?: (date: Timestamp) => void;
   /** Custom day cell component */
   cellComponent?: (props: CalendarMonthCellProps) => JSX.Element;
+  /** Events to be shown inside of the calendar cells */
   events?: CalendarEvent[];
 };
 
