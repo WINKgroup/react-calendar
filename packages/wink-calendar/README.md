@@ -30,9 +30,12 @@ import 'wink-react-calendar/dist/css/style.css';
 
 2. Import and use the component
 ```
-import Calendar from 'wink-react-calendar';
+import { CalendarMonth } from 'wink-react-calendar';
 
-<Calendar
+const [date, setDate] = useState();
+
+<CalendarMonth
+  mode='singleSelection'
   selectedDay={date}
   onClick={setDate}
 />
