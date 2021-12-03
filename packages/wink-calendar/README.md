@@ -15,6 +15,10 @@ Yet another calendar React component
 - Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ✅
 - Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) ⏰
 
+## Demos
+
+Check out the demos [here!](https://winkgroup.github.io/wink-react-calendar/)
+
 ## Get Started
 
 ```
