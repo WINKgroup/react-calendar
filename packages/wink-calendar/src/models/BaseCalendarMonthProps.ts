@@ -54,7 +54,7 @@ export type BaseCalendarMonthProps = {
    * */
   showWeekDaysLabels?: boolean;
   /**
-   * Cell component
+   * Component for the cell of a day
    * @default {@link CalendarMonthCell}
    * */
   cellComponent?: (props: CalendarMonthCellProps) => JSX.Element;

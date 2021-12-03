@@ -13,7 +13,7 @@ Yet another calendar React component
 - Or do your own thing with `custom` mode and get creative 🎨
 - Calendar events? We've got you covered 
 - Responsive and mobile first 📱
-- Continously updated 🔥
+- Continuously updated 🔥
 - Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ✅
 - Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) ⏰
 
@@ -75,6 +75,13 @@ const [date, setDate] = useState();
 | endDate | Timestamp | undefined | (rangeSelection mode only) Ending date of the range |
 | onSelectStartDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when first date is selected |
 | onSelectEndDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when second date is selected |
+| cellComponent | (props: CalendarMonthCellProps) => JSX.Element | CalendarMonthCell | Component for the cell of a day |
+| showExtraMonthCells | boolean | true | Render or not cells which date doesn't belong to current month |
+| events | CalendarEvent[] | [] | Events to be shown inside of the calendar cells |
+| onCellMouseEnter | (date: Timestamp) => void | undefined | Triggered when a cell is no longer hovered |
+| onCellMouseLeave | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
+| height | string \| number | '100%' | Height of the calendar |
+| width | string \| number | '100%' | Width of the calendar |
 
 ## Typescript support
 
