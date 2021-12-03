@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wink-react-calendar/static/css/main.a5051ef2.chunk.css",
+    "main.css": "/wink-react-calendar/static/css/main.580b89ab.chunk.css",
     "main.js": "/wink-react-calendar/static/js/main.91b92288.chunk.js",
     "main.js.map": "/wink-react-calendar/static/js/main.91b92288.chunk.js.map",
     "runtime-main.js": "/wink-react-calendar/static/js/runtime-main.e7892598.js",
@@ -12,7 +12,7 @@
     "static/js/3.1fc0ed00.chunk.js.map": "/wink-react-calendar/static/js/3.1fc0ed00.chunk.js.map",
     "index.html": "/wink-react-calendar/index.html",
     "static/css/2.73a4b9c4.chunk.css.map": "/wink-react-calendar/static/css/2.73a4b9c4.chunk.css.map",
-    "static/css/main.a5051ef2.chunk.css.map": "/wink-react-calendar/static/css/main.a5051ef2.chunk.css.map",
+    "static/css/main.580b89ab.chunk.css.map": "/wink-react-calendar/static/css/main.580b89ab.chunk.css.map",
     "static/js/2.e3531bfe.chunk.js.LICENSE.txt": "/wink-react-calendar/static/js/2.e3531bfe.chunk.js.LICENSE.txt",
     "static/media/chevron-left.svg": "/wink-react-calendar/static/media/chevron-left.c80cdd8e.svg",
     "static/media/chevron-right.svg": "/wink-react-calendar/static/media/chevron-right.61c607bb.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.e7892598.js",
     "static/css/2.73a4b9c4.chunk.css",
     "static/js/2.e3531bfe.chunk.js",
-    "static/css/main.a5051ef2.chunk.css",
+    "static/css/main.580b89ab.chunk.css",
     "static/js/main.91b92288.chunk.js"
   ]
 }
