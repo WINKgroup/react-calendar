@@ -32,7 +32,11 @@ import 'wink-react-calendar/dist/css/style.css';
 ```
 import { CalendarMonth } from 'wink-react-calendar';
 
+...
+
 const [date, setDate] = useState();
+
+...
 
 <CalendarMonth
   mode='singleSelection'
