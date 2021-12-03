@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className='App p-3 mb-5'>
-      <p className='display-3'>Wink React Calendar</p>
+      <p className='display-3'>WiNK React Calendar</p>
 
       <div className='mt-5'>
         <p className='h5'>Simple selection demo</p>

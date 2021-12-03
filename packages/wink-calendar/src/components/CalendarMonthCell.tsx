@@ -1,12 +1,16 @@
 import classNames from 'classnames';
-import { CellProps } from '../models/CellProps';
+import { CalendarMonthCellProps } from '../models/CalendarMonthCellProps';
+import { DateTime } from 'luxon';
 
-const Cell = (
+const CalendarMonthCell = (
   {
     date,
     config,
-    onClick: pOnClick
-  }: CellProps) => {
+    events = [],
+    onClick: pOnClick,
+    onMouseEnter: pOnMouseEnter,
+    onMouseLeave: pOnMouseLeave
+  }: CalendarMonthCellProps) => {
   const onClick = () => {
     if (!config?.disabled) {
       pOnClick?.();
@@ -14,7 +18,7 @@ const Cell = (
   };
 
   return <div
-    key={date.toISODate()}
+    key={date}
     className={classNames('cell', {
       ...config
         ? {
@@ -30,9 +34,13 @@ const Cell = (
         : {}
     })}
     onClick={onClick}
+    onMouseEnter={pOnMouseEnter}
+    onMouseLeave={pOnMouseLeave}
   >
-    {date.day}
+    {DateTime.fromMillis(date).day}
+
+    <div className={classNames('event-dot', { show: !!events.length })} />
   </div>;
 };
 
-export default Cell;
+export default CalendarMonthCell;

@@ -1,11 +1,10 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
-import { capitalize } from 'lodash';
 import { DateTime } from 'luxon';
-import Cell from '../Cell';
+import CalendarMonthCell from '../CalendarMonthCell';
 import { BaseCalendarMonthProps } from '../../models/BaseCalendarMonthProps';
-import { CellConfig } from '../../models/CellProps';
+import { CalendarMonthCellConfig } from '../../models/CalendarMonthCellProps';
+import { CalendarMonthHeader } from '../CalendarMonthHeader';
 
 const WEEK_LENGTH_FULL = 7;
 
@@ -19,10 +18,17 @@ export const BaseCalendarMonth = (
     maxDate,
     weeks = 6,
     opaqueExtraMonthCells = true,
+    showExtraMonthCells = true,
     borderCurrentDay = true,
     navigateToCorrespondingMonth = true,
     showWeekDaysLabels = true,
+    cellComponent: CellComponent = CalendarMonthCell,
+    events = [],
+    height = '100%',
+    width = '100%',
     onCellClick,
+    onCellMouseEnter,
+    onCellMouseLeave,
     onMonthChange
   }: BaseCalendarMonthProps) => {
   const [today] = useState<DateTime>(DateTime.now());
@@ -61,7 +67,7 @@ export const BaseCalendarMonth = (
       }
 
       return <div key={date.toISODate()} className='header-cell'>
-        {capitalize(date.toFormat('ccc'))}
+        {date.toFormat('ccc')}
       </div>;
     });
   };
@@ -96,7 +102,7 @@ export const BaseCalendarMonth = (
       const currentDateStartDay = currentDate.startOf('day');
       const config = cellsConfig.find(c => DateTime.fromMillis(c.date).startOf('day').equals(currentDateStartDay));
 
-      const defaultConfig: CellConfig = {
+      const defaultConfig: CalendarMonthCellConfig = {
         style: {
           opaque: opaqueExtraMonthCells && !isSameMonth,
           bordered: borderCurrentDay && currentDateStartDay.equals(today.startOf('day'))
@@ -106,11 +112,22 @@ export const BaseCalendarMonth = (
           || !!maxDate && currentDateStartDay > DateTime.fromMillis(maxDate).startOf('day')
       };
 
-      const item = <Cell
-        date={currentDate}
-        config={config ?? defaultConfig}
-        onClick={onItemClick}
-      />
+      const dayEvents = events.filter(({ date }) => DateTime.fromMillis(date).startOf('day').equals(currentDate));
+
+      let item;
+
+      if (!showExtraMonthCells && !isSameMonth) {
+        item = <div />;
+      } else {
+        item = <CellComponent
+          date={currentDate.toMillis()}
+          config={config ?? defaultConfig}
+          events={dayEvents}
+          onClick={onItemClick}
+          onMouseEnter={() => onCellMouseEnter?.(cloned.toMillis())}
+          onMouseLeave={() => onCellMouseLeave?.(cloned.toMillis())}
+        />;
+      }
 
       arr.push(item);
 
@@ -120,26 +137,17 @@ export const BaseCalendarMonth = (
     return arr;
   };
 
-  return <div className={classNames('calendar-month', className)}>
-    <p className='calendar-header'>
-      <div
-        className='prev-period'
-        onClick={() => setStartOfMonth(month => month?.minus({ month: 1 }))}
-      >
-        <ChevronLeft size={20} />
-      </div>
-
-      <div>
-        {capitalize(startOfMonth?.toFormat('MMMM yyyy'))}
-      </div>
-
-      <div
-        className='next-period'
-        onClick={() => setStartOfMonth(month => month?.plus({ month: 1 }))}
-      >
-        <ChevronRight size={20} />
-      </div>
-    </p>
+  return <div
+    className={classNames('calendar-month', className)}
+    style={{
+      height,
+      width
+    }}
+  >
+    <CalendarMonthHeader
+      currentMonth={startOfMonth}
+      onChangeMonth={setStartOfMonth}
+    />
 
     <div className='grid' style={{
       gridTemplateColumns: `repeat(${WEEK_LENGTH}, 1fr)`

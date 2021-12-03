@@ -5,7 +5,21 @@ Yet another calendar React component
 [![wink developer](https://badgen.net/badge/WiNK/Developer/ff5a3a)](https://wink.by)
 [![npm](https://img.shields.io/npm/v/wink-react-calendar)](https://www.npmjs.com/package/wink-react-calendar)
 
-### ⚠️ Work in progress ⚠️
+[<img alt="calendar preview" src="https://winkgroup.github.io/wink-react-calendar/calendar_month_preview.png" height="300px"/>](https://winkgroup.github.io/wink-react-calendar/)
+
+## Why should I use it?
+
+- Get things done quickly with `singleSelection` and `rangeSelection` modes ✅
+- Or do your own thing with `custom` mode and get creative 🎨
+- Calendar events? We've got you covered 
+- Responsive and mobile first 📱
+- Continously updated 🔥
+- Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ✅
+- Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) ⏰
+
+## Demos
+
+Check out the demos [here!](https://winkgroup.github.io/wink-react-calendar/)
 
 ## Get Started
 
@@ -22,11 +36,18 @@ import 'wink-react-calendar/dist/css/style.css';
 
 2. Import and use the component
 ```
-import Calendar from 'wink-react-calendar';
+import { CalendarMonth } from 'wink-react-calendar';
 
-<Calendar
-  selectedDay={date}
-  onClick={setDate}
+...
+
+const [date, setDate] = useState();
+
+...
+
+<CalendarMonth
+  mode='singleSelection'
+  selectedDate={date}
+  onCellClick={setDate}
 />
 ```
 ## Props
