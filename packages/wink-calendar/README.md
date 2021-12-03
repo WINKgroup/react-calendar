@@ -5,7 +5,7 @@ Yet another calendar React component
 [![wink developer](https://badgen.net/badge/WiNK/Developer/ff5a3a)](https://wink.by)
 [![npm](https://img.shields.io/npm/v/wink-react-calendar)](https://www.npmjs.com/package/wink-react-calendar)
 
-<img alt="calendar preview" src="https://winkgroup.github.io/wink-react-calendar/calendar_month_preview.png" height="300px"/>
+[<img alt="calendar preview" src="https://winkgroup.github.io/wink-react-calendar/calendar_month_preview.png" height="300px"/>](https://winkgroup.github.io/wink-react-calendar/)
 
 ## Why should I use it?
 
