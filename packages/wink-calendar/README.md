@@ -36,8 +36,8 @@ const [date, setDate] = useState();
 
 <CalendarMonth
   mode='singleSelection'
-  selectedDay={date}
-  onClick={setDate}
+  selectedDate={date}
+  onCellClick={setDate}
 />
 ```
 ## Props
