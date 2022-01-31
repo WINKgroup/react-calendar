@@ -26,6 +26,10 @@ Check out the demos [here!](https://winkgroup.github.io/wink-react-calendar/)
 ```
 $ npm i wink-react-calendar
 ```
+or
+```
+$ yarn wink-react-calendar
+```
 
 ## Usage
 
