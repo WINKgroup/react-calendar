@@ -28,7 +28,7 @@ $ npm i wink-react-calendar
 ```
 or
 ```
-$ yarn wink-react-calendar
+$ yarn add wink-react-calendar
 ```
 
 ## Usage
