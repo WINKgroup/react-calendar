@@ -84,8 +84,8 @@ const [date, setDate] = useState();
 | onMonthChange | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
 | onSelectStartDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when first date is selected |
 | onSelectEndDate | (date?: Timestamp) => void | undefined | (rangeSelection mode only) Triggered when second date is selected |
-| onCellMouseEnter | (date: Timestamp) => void | undefined | Triggered when a cell is no longer hovered |
-| onCellMouseLeave | (date: Timestamp) => void | undefined | Triggered when the current month is changed |
+| onCellMouseEnter | (date: Timestamp) => void | undefined | Triggered when a cell is hovered |
+| onCellMouseLeave | (date: Timestamp) => void | undefined | Triggered when a cell is no longer hovered |
 
 ## Typescript support
 
