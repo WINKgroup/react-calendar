@@ -89,4 +89,4 @@ const [date, setDate] = useState();
 
 ## Typescript support
 
-The package comes with types included
+The package comes with types included.
