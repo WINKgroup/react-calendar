@@ -10,13 +10,13 @@ A calendar component which is highly customizable yet plug and play for most usu
 
 ## Why should I use it?
 
-- Get things done quickly with `singleSelection` and `rangeSelection` modes ✅
-- Or do your own thing with `custom` mode and get creative 🎨
-- Calendar events? We've got you covered 
-- Responsive and mobile first 📱
-- Continuously updated 🔥
-- Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ✅
-- Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) ⏰
+- ✅ Get things done quickly with `singleSelection` and `rangeSelection` modes
+- 🎨 Or do your own thing with `custom` mode and get creative
+- 📅 Calendar events? We've got you covered 
+- 📱 Responsive and mobile first 
+- 🔥 Continuously updated 
+- ✅ Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) 
+- ⏰ Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) 
 
 ## Demos
 
