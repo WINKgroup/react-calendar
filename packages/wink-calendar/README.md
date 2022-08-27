@@ -3,6 +3,7 @@
 [![wink developer](https://badgen.net/badge/WiNK/Developer/ff5a3a)](https://wink.by)
 [![npm](https://img.shields.io/npm/v/wink-react-calendar)](https://www.npmjs.com/package/wink-react-calendar)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fwinkgroup.github.io%2Fwink-react-calendar%2F)](https://winkgroup.github.io/wink-react-calendar/)
+[![downloads](https://img.shields.io/npm/dt/wink-react-calendar?label=downloads)](https://www.npmjs.com/package/wink-react-calendar)
 
 A calendar component which is highly customizable yet plug and play for most usual use cases.
 
@@ -91,3 +92,7 @@ const [date, setDate] = useState();
 ## Typescript support
 
 The package comes with types included.
+
+## Maintainers
+
+- [oxcened](https://github.com/oxcened)
