@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WINKgroup/wink-react-calendar.git"
+    "url": "git+https://github.com/WINKgroup/react-calendar.git"
   },
   "keywords": [
     "calendar",
@@ -26,9 +26,9 @@
   "author": "Alen Ajam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WINKgroup/wink-react-calendar/issues"
+    "url": "https://github.com/WINKgroup/react-calendar/issues"
   },
-  "homepage": "https://winkgroup.github.io/wink-react-calendar/",
+  "homepage": "https://winkgroup.github.io/react-calendar/",
   "dependencies": {
     "classnames": "^2.3.1",
     "luxon": "^2.1.1",

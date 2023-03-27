@@ -1,30 +1,41 @@
 # WiNK React Calendar
 
-[![wink developer](https://badgen.net/badge/WiNK/Developer/ff5a3a)](https://wink.by)
 [![npm](https://img.shields.io/npm/v/wink-react-calendar)](https://www.npmjs.com/package/wink-react-calendar)
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fwinkgroup.github.io%2Fwink-react-calendar%2F)](https://winkgroup.github.io/wink-react-calendar/)
-[![downloads](https://img.shields.io/npm/dt/wink-react-calendar?label=downloads)](https://www.npmjs.com/package/wink-react-calendar)
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fwinkgroup.github.io%2Freact-calendar%2F)](https://winkgroup.github.io/react-calendar/)
+[![downloads](https://img.shields.io/npm/dt/wink-react-calendar?label=downloads)](https://www.npmjs.com/package/react-calendar)
 
 A calendar component which is highly customizable yet plug and play for most usual use cases.
 
-[<img alt="calendar preview" src="https://winkgroup.github.io/wink-react-calendar/calendar_month_preview.png" height="200px"/>](https://winkgroup.github.io/wink-react-calendar/)
+[<img alt="calendar preview" src="https://winkgroup.github.io/react-calendar/calendar_month_preview.png" height="200px"/>](https://winkgroup.github.io/react-calendar/)
 
-## Why should I use it?
+## Table of contents
+
+1. [Why should I use this?](#why-should-i-use-this)
+1. [I want to give it a try!](#i-want-to-give-it-a-try)
+1. [Get Started](#get-started)
+1. [Usage](#usage)
+1. [Component Props](#component-props)
+1. [TypeScript Support](#typescript-support)
+1. [Contribute](#contribute)
+1. [Roadmap](#roadmap)
+1. [Maintainers](#maintainers)
+
+## Why should I use this?
 
 - ✅ Get things done quickly with `singleSelection` and `rangeSelection` modes
 - 🎨 Or do your own thing with `custom` mode and get creative
-- 📅 Calendar events? We've got you covered 
-- 📱 Responsive and mobile first 
-- 🔥 Continuously updated 
-- ✅ Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) 
-- ⏰ Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/) 
+- 📅 Calendar events? We've got you covered
+- 📱 Responsive and mobile first
+- 🔥 Continuously updated
+- ✅ Layout built with the flexible CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- ⏰ Built on top of the modern and lightweight [Luxon](https://moment.github.io/luxon/#/)
 
-## Demos
+## I want to give it a try!
 
-Check out the demos [here!](https://winkgroup.github.io/wink-react-calendar/)
+You can check out the demo [here](https://winkgroup.github.io/react-calendar/).
 
 ## Get Started
-
+Install the package
 ```
 $ npm i wink-react-calendar
 ```
@@ -56,7 +67,7 @@ const [date, setDate] = useState();
   onCellClick={setDate}
 />
 ```
-## Props
+## Component Props
 
 <b>CalendarMonth</b>
 
@@ -89,9 +100,23 @@ const [date, setDate] = useState();
 | onCellMouseEnter | (date: Timestamp) => void | undefined | Triggered when a cell is hovered |
 | onCellMouseLeave | (date: Timestamp) => void | undefined | Triggered when a cell is no longer hovered |
 
-## Typescript support
+## TypeScript Support
 
 The package comes with types included.
+
+## Contribute
+
+Contributions are very welcome! Not all PRs may be merged but please don't take it personally!
+
+## Roadmap
+
+1. Add instructions in the README on how to build and run this package for contributors.
+1. Separate CSS in two separate modules:
+   1. Unstyled which contains layout only CSS. Developer may only import this to style  in their own way.
+   1. Styled which contains CSS that provides developers a ready-to-use styled calendar.
+1. Make sure that all elements have a (good) classname set to them so that developers can easily style them through CSS.
+1. Make a documentation on all those classnames.
+1. We could provide style customization through SASS similiar to what [Bootstrap does](https://getbootstrap.com/docs/5.0/customize/sass/).
 
 ## Maintainers
 

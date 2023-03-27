@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WINKgroup/wink-react-calendar.git"
+    "url": "git+https://github.com/WINKgroup/react-calendar.git"
   },
   "author": "Alen Ajam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WINKgroup/wink-react-calendar/issues"
+    "url": "https://github.com/WINKgroup/react-calendar/issues"
   },
-  "homepage": "https://github.com/WINKgroup/wink-react-calendar#readme",
+  "homepage": "https://github.com/WINKgroup/react-calendar#readme",
   "workspaces": [
     "packages/*",
     "examples/*",
