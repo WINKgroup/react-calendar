@@ -110,13 +110,15 @@ Contributions are very welcome! Not all PRs may be merged but please don't take 
 
 ## Roadmap
 
-1. Add instructions in the README on how to build and run this package for contributors.
-1. Separate CSS in two separate modules:
+- [ ] Add instructions in the README on how to build and run this package for contributors.
+- [ ] Separate CSS in two separate modules:
    1. Unstyled which contains layout only CSS. Developer may only import this to style  in their own way.
    1. Styled which contains CSS that provides developers a ready-to-use styled calendar.
-1. Make sure that all elements have a (good) classname set to them so that developers can easily style them through CSS.
-1. Make a documentation on all those classnames.
-1. We could provide style customization through SASS similiar to what [Bootstrap does](https://getbootstrap.com/docs/5.0/customize/sass/).
+- [ ] Make sure that all elements have a (good) classname set to them so that developers can easily style them through CSS.
+- [ ] Make a documentation on all those classnames.
+- [ ] Optionally style differently weekend days.
+- [ ] Add picker of months, years, (decades?) accessible through the header.
+- [ ] We could provide style customization through SASS similiar to what [Bootstrap does](https://getbootstrap.com/docs/5.0/customize/sass/).
 
 ## Maintainers
 
