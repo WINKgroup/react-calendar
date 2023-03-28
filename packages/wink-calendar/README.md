@@ -106,11 +106,35 @@ The package comes with types included.
 
 ## Contribute
 
-Contributions are very welcome! Not all PRs may be merged but please don't take it personally!
+Contributions are very welcome. Not all PRs may be merged but please don't take it personally!
+
+1. Fork and clone the repository
+
+1. Install package dependencies
+
+   ```
+   npm install
+   ```
+
+1. Build on file changes
+
+   ```
+   npm run watch:scss
+   ```
+   and on another terminal
+   ```
+   npm run watch:tsc
+   ```
+
+1. Or build once
+
+   ```
+   npm run build
+   ```
 
 ## Roadmap
 
-- [ ] Add instructions in the README on how to build and run this package for contributors.
+- [x] Add instructions in the README on how to build and run this package for contributors.
 - [ ] Separate CSS in two separate modules:
    1. Unstyled which contains layout only CSS. Developer may only import this to style  in their own way.
    1. Styled which contains CSS that provides developers a ready-to-use styled calendar.
